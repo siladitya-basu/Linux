@@ -63,7 +63,7 @@ Follow the steps in the [Arch Wiki](https://wiki.archlinux.org/title/installatio
 2. `arch-chroot` into `/mnt`.
 3. Set time zone (assumes hardware clock is in UTC).
 4. Edit `/etc/locale.gen` and create `/etc/locale.conf` file.
-> Install `nano` using `pacman -S nano`.
+      > Install `nano` using `pacman -S nano`.
 5. Edit `/etc/hostname`. I set my hostname as 'arch-vbox'.
 6. Edit `/etc/hosts`. Read [doc](https://wiki.archlinux.org/title/Network_configuration#Local_hostname_resolution).
 7. Set root password using `passwd`.
@@ -74,10 +74,10 @@ Follow the steps in the [Arch Wiki](https://wiki.archlinux.org/title/installatio
 12. Install grub: `pacman -S grub`.
 13. `pacman -S bootmgr dosfstools os-prober mtools`
 14. Mount EFI partition to `/boot/efi`.
-   > If you already have an EFI partition (for e.g. if you are installing Arch beside Windows) mount that here.
+      > If you already have an EFI partition (for e.g. if you are installing Arch beside Windows) mount that here.
 16. `grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck`
 17. `grub-mkconfig -o /boot/grub/grub.cfg`.
-> `os-prober` might be disabled by `grub` at this stage. Enable to discover OSes on other bootable partitions.
+      > `os-prober` might be disabled by `grub` at this stage. Enable to discover OSes on other bootable partitions.
 18. Use `pacman` to install `networkmanager` and `git`.
 19. `systemctl enable NetworkManager`.
 20. Exit and unmount.
@@ -102,7 +102,7 @@ See [General recommendations](https://wiki.archlinux.org/title/General_recommend
     * `picom` is a compositor, a fork of `compton`.
     * `alacritty` is a terminal emulator.
     * `nemo` is a file manager, forked from `nautilus`.
-> Install these programs individually if they won't install together.
+      > Install these programs individually if they won't install together.
 3. Get [paru](https://github.com/morganamilo/paru), an AUR helper. `base-devel` is needed for `makepkg`.
 ```
 sudo pacman -S --needed base-devel
