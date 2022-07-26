@@ -95,13 +95,13 @@ See [General recommendations](https://wiki.archlinux.org/title/General_recommend
 ## GUI
 
 1. Log in as the newly created user.
-2. `sudo pacman -S xf86-video-fbdev xorg xorg-xinit nitrogen picom alacritty nemo gedit firefox`
+2. `sudo pacman -S xf86-video-fbdev xorg xorg-xinit nitrogen picom alacritty thunar gedit firefox`
     * Replace `xf86-video-fbdev` with an NVIDIA or AMD display driver if installing on physical.
     * `xorg` is the X display server.
     * `nitrogen` draws wallpapers.
     * `picom` is a compositor, a fork of `compton`.
     * `alacritty` is a terminal emulator.
-    * `nemo` is a file manager, forked from `nautilus`.
+    * `thunar` is a file manager.
       > Install these programs individually if they won't install together.
 3. Get [paru](https://github.com/morganamilo/paru), an AUR helper. `base-devel` is needed for `makepkg`.
 ```
