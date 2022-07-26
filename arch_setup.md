@@ -35,10 +35,12 @@ Follow the steps in the [Arch Wiki](https://wiki.archlinux.org/title/installatio
 
 1. Start the VM. Choose installation media (the Arch ISO).
 
-> If there is a kernel panic and the host is Windows, uninstall WSL on host and uncheck any virtualization or hypervisor related feature in `Turn Windows Features On or Off`.
+   > If there is a kernel panic and the host is Windows, uninstall WSL on host and uncheck any virtualization or hypervisor related feature in `Turn Windows Features On or Off`.
 
 2. Check boot mode (should be EFI in this case), internet connection, and update system clock.
 3. Partition the disks. We need an EFI partition, a swap, and a root partition.
+   > Check out `cfdisk`. It's easier to use than `fdisk`.
+   > Can use `lsblk` to check for drives and partitions. Comes in handy when installing Arch beside another OS.
     * `fdisk -l` to get the name of the disk to be partitioned (this will be 50 GB in this case).
     * `fdisk path/to/disk`
     * Enter `g` to create GPT partition table.
@@ -72,12 +74,13 @@ Follow the steps in the [Arch Wiki](https://wiki.archlinux.org/title/installatio
 12. Install grub: `pacman -S grub`.
 13. `pacman -S bootmgr dosfstools os-prober mtools`
 14. Mount EFI partition to `/boot/efi`.
-15. `grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck`
-16. `grub-mkconfig -o /boot/grub/grub.cfg`.
+   > If you already have an EFI partition (for e.g. if you are installing Arch beside Windows) mount that here.
+16. `grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck`
+17. `grub-mkconfig -o /boot/grub/grub.cfg`.
 > `os-prober` might be disabled by `grub` at this stage. Enable to discover OSes on other bootable partitions.
-17. Use `pacman` to install `networkmanager` and `git`.
-18. `systemctl enable NetworkManager`.
-19. Exit and unmount.
+18. Use `pacman` to install `networkmanager` and `git`.
+19. `systemctl enable NetworkManager`.
+20. Exit and unmount.
 ```
 exit
 umount -R /mnt (If this doesn't work use umount -l /mnt)
