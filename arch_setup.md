@@ -4,7 +4,6 @@ Step-by-step guide for
 - installing Arch Linux on VirtualBox
 - setting up a display server, a window manager, compositor, etc.
 - installing necessary apps like mpv, vs code, etc.
-- some ricing
 
 This guide assumes you have downloaded an Arch Linux ISO, installed Oracle VirtualBox, and have an internet connection.
 
@@ -115,11 +114,7 @@ makepkg -si
 
 &nbsp;
 
-## Ricing
-
-&nbsp;
-
-### AwesomeWM 
+## AwesomeWM 
 1. Edit `rc.lua`
     * Change order of layouts
     * Add
@@ -136,15 +131,6 @@ awful.spawn("rofi -show run")
 5. Remove titlebars by commenting out the code block under the comment `-- Add titlebars to normal clients and dialogs`.
 
 &nbsp;
-
-## Apps
-
-1. [Powerpill](https://wiki.archlinux.org/title/Powerpill). Wrapper for `pacman` that speeds up downloads using parallel downloading, `rsync`, etc.
-2. [Fish](https://wiki.archlinux.org/title/Fish). Alternative to `bash`.
-3. [zoxide](https://github.com/ajeetdsouza/zoxide). Smarter `cd`.
-4. polybar
-5. nm-applet
-6. oh-my-fish
 
 
 
